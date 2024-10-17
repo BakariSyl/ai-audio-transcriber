@@ -53,6 +53,12 @@ def main():
         st.session_state["lang"] = ""
         st.session_state["segments"] = []
 
+    # Initialize session state keys
+    if "transcript" not in st.session_state:
+        st.session_state["transcript"] = ""
+    if "lang" not in st.session_state:
+        st.session_state["lang"] = ""
+
     model_list = {"Captain": r"./assets/models/base.pt",
                  "Major":r"./assets/models/small.pt",
                  "Colonel":r"./assets/models/medium.pt",
@@ -277,4 +283,3 @@ def transcript_download(out_format:str):
 
 if __name__ == "__main__":
     main()
-     
