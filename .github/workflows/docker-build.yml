@@ -48,7 +48,7 @@ jobs:
         with:
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPONAME }}:latest
+          tags: bakarisyl/ai-audio-transcriber:latest
           cache-from: type=gha
           cache-to: type=gha, mode=max
           # platforms: linux/amd64,linux/arm64,linux/arm/v7
