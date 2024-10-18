@@ -60,3 +60,19 @@ jobs:
       #     format: 'table'
       #     exit-code: '0'
       #     ignore-unfixed: true
+
+  dev_container:
+    name: Dev Container
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up Dev Container
+        run: |
+          echo '{
+            "name": "Dev Container",
+            "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+            "features": {
+              "docker-in-docker": "latest"
+            },
+            "postCreateCommand": "sudo apt-get update && sudo apt-get install -y docker.io"
+          }' > devcontainer.json
